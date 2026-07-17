@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.data.mapping.PropertyReferenceException;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.server.ResponseStatusException;
 import java.time.Instant;
@@ -23,6 +24,9 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ResponseStatusException.class) ResponseEntity<ApiError> responseStatus(ResponseStatusException ex, HttpServletRequest request) {
         HttpStatus status = HttpStatus.valueOf(ex.getStatusCode().value());
         return ResponseEntity.status(status).body(ApiError.of(status, ex.getReason() == null ? status.getReasonPhrase() : ex.getReason(), request.getRequestURI()));
+    }
+    @ExceptionHandler(PropertyReferenceException.class) ResponseEntity<ApiError> propertyReference(PropertyReferenceException ex, HttpServletRequest request) {
+        return ResponseEntity.badRequest().body(ApiError.of(HttpStatus.BAD_REQUEST, ex.getMessage(), request.getRequestURI()));
     }
     @ExceptionHandler(Exception.class) ResponseEntity<ApiError> unexpected(Exception ex, HttpServletRequest request) {
         ex.printStackTrace();
