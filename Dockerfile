@@ -14,7 +14,7 @@ FROM eclipse-temurin:21-jre-jammy
 WORKDIR /app
 
 # Copy the packaged jar file from build stage
-COPY --from=build /app/backend/target/*.jar app.jar
+COPY --from=build /app/backend/target/nirmaan-api-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose default Spring Boot port (Render overrides this dynamically via PORT env variable)
 EXPOSE 8080

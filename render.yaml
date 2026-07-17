@@ -12,10 +12,18 @@ services:
     envVars:
       - key: PORT
         value: 8080
-      - key: DB_URL
+      - key: DB_HOST
         fromDatabase:
           name: nirmaan-db
-          property: internalJdbcConnectionURL
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: nirmaan-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: nirmaan-db
+          property: database
       - key: DB_USERNAME
         fromDatabase:
           name: nirmaan-db
