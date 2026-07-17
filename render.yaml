@@ -1,0 +1,28 @@
+databases:
+  - name: nirmaan-db
+    databaseName: nirmaan
+    user: nirmaan_user
+    plan: free
+
+services:
+  - type: web
+    name: nirmaan-api
+    runtime: docker
+    plan: free
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: DB_URL
+        fromDatabase:
+          name: nirmaan-db
+          property: internalJdbcConnectionURL
+      - key: DB_USERNAME
+        fromDatabase:
+          name: nirmaan-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: nirmaan-db
+          property: password
+      - key: JWT_SECRET
+        generateValue: true
