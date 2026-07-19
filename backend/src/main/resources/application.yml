@@ -36,6 +36,6 @@ app:
     refresh-token-expiration: ${JWT_REFRESH_TOKEN_EXPIRATION:P30D}
     issuer: ${JWT_ISSUER:nirmaan-api}
   ai:
-    api-key: ${AI_API_KEY:AQ.Ab8RN6IPpbwQD0P4L22BgGbBVkiLDDBgQKRTN_2-fkx2OSQr9g}
+    api-key: ${AI_API_KEY:}
     base-url: ${AI_BASE_URL:https://generativelanguage.googleapis.com/v1beta/openai}
     model: ${AI_MODEL:gemini-1.5-flash}
