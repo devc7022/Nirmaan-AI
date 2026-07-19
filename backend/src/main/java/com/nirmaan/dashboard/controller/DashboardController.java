@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/dashboard")
+@RequestMapping("/api/private/dashboard")
 @RequiredArgsConstructor
 @Tag(name = "Dashboard", description = "Operations related to retrieving dashboard statistics")
 @SecurityRequirement(name = "bearerAuth")

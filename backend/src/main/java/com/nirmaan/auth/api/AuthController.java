@@ -11,7 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/auth")
+@RequestMapping("/api/public/auth")
 @RequiredArgsConstructor
 @Tag(name = "Authentication", description = "Registration, login, and token refresh operations")
 public class AuthController {

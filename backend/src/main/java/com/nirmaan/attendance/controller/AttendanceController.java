@@ -21,7 +21,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/v1/attendance")
+@RequestMapping("/api/private/attendance")
 @RequiredArgsConstructor
 @Tag(name = "Attendance", description = "Attendance management operations")
 @SecurityRequirement(name = "bearerAuth")
