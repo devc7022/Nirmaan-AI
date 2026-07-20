@@ -1,6 +1,6 @@
 package com.nirmaan.auth.service;
 
-import com.nirmaan.auth.api.*;
+import com.nirmaan.auth.dto.*;
 import com.nirmaan.auth.domain.RefreshToken;
 import com.nirmaan.auth.domain.Role;
 import com.nirmaan.auth.domain.User;

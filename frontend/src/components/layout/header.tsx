@@ -2,10 +2,12 @@
 
 import React from 'react';
 import { useAuth } from '@/contexts/AuthContext';
-import { User, Bell } from 'lucide-react';
+import { useTheme } from '@/contexts/ThemeContext';
+import { User, Bell, Sun, Moon } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const { user } = useAuth();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <header className="h-16 bg-card border-b border-border px-6 flex items-center justify-between sticky top-0 z-30 shadow-sm">
@@ -16,6 +18,19 @@ export const Header: React.FC = () => {
       </div>
 
       <div className="flex items-center gap-4">
+        <button
+          onClick={toggleTheme}
+          className="p-2 text-muted-foreground hover:text-foreground rounded-full hover:bg-muted transition-colors"
+          title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          aria-label="Toggle theme"
+        >
+          {theme === 'dark' ? (
+            <Sun className="h-5 w-5 text-amber-500 animate-spin-slow" />
+          ) : (
+            <Moon className="h-5 w-5 text-indigo-500" />
+          )}
+        </button>
+
         <button className="p-2 text-muted-foreground hover:text-foreground rounded-full hover:bg-muted transition-colors relative">
           <Bell className="h-5 w-5" />
           <span className="absolute top-1 right-1 h-2.5 w-2.5 bg-destructive rounded-full" />

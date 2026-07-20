@@ -1,8 +1,8 @@
 package com.nirmaan.worker.service;
 
-import com.nirmaan.worker.api.dto.WorkerMapper;
-import com.nirmaan.worker.api.dto.WorkerRequest;
-import com.nirmaan.worker.api.dto.WorkerResponse;
+import com.nirmaan.worker.dto.WorkerMapper;
+import com.nirmaan.worker.dto.WorkerRequest;
+import com.nirmaan.worker.dto.WorkerResponse;
 import com.nirmaan.worker.domain.Worker;
 import com.nirmaan.worker.domain.WorkerStatus;
 import com.nirmaan.site.domain.ConstructionSite;
@@ -32,9 +32,8 @@ public class WorkerService {
         Specification<Worker> spec = (root, query, cb) -> cb.conjunction();
 
         if (name != null && !name.trim().isEmpty()) {
-            spec = spec.and((root, query, cb) ->
-                cb.like(cb.lower(root.get("name")), "%" + name.trim().toLowerCase() + "%")
-            );
+            spec = spec.and(
+                    (root, query, cb) -> cb.like(cb.lower(root.get("name")), "%" + name.trim().toLowerCase() + "%"));
         }
 
         if (skill != null && !skill.trim().isEmpty()) {
@@ -54,7 +53,8 @@ public class WorkerService {
 
     public WorkerResponse getWorkerById(UUID id) {
         Worker worker = workerRepository.findById(id)
-            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Worker not found with ID: " + id));
+                .orElseThrow(
+                        () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Worker not found with ID: " + id));
         return workerMapper.toResponse(worker);
     }
 
@@ -70,7 +70,8 @@ public class WorkerService {
 
         if (request.siteId() != null) {
             ConstructionSite site = siteRepository.findById(request.siteId())
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Construction site not found with ID: " + request.siteId()));
+                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                            "Construction site not found with ID: " + request.siteId()));
             worker.setSite(site);
         }
 
@@ -81,7 +82,8 @@ public class WorkerService {
     @Transactional
     public WorkerResponse updateWorker(UUID id, WorkerRequest request) {
         Worker worker = workerRepository.findById(id)
-            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Worker not found with ID: " + id));
+                .orElseThrow(
+                        () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Worker not found with ID: " + id));
 
         String email = cleanEmail(request.email());
         if (email != null && workerRepository.existsByEmailIgnoreCaseAndIdNot(email, id)) {
@@ -93,7 +95,8 @@ public class WorkerService {
 
         if (request.siteId() != null) {
             ConstructionSite site = siteRepository.findById(request.siteId())
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Construction site not found with ID: " + request.siteId()));
+                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                            "Construction site not found with ID: " + request.siteId()));
             worker.setSite(site);
         } else {
             worker.setSite(null);
@@ -106,7 +109,8 @@ public class WorkerService {
     @Transactional
     public void deleteWorker(UUID id) {
         Worker worker = workerRepository.findById(id)
-            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Worker not found with ID: " + id));
+                .orElseThrow(
+                        () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Worker not found with ID: " + id));
         workerRepository.delete(worker);
     }
 

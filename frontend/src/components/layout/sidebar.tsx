@@ -64,12 +64,6 @@ export const Sidebar: React.FC = () => {
 
       {/* Footer User Info and Logout */}
       <div className="p-4 border-t border-border">
-        {user && (
-          <div className="mb-4 px-4">
-            <p className="font-semibold text-sm text-foreground">{user.name}</p>
-            <p className="text-xs text-muted-foreground capitalize">{user.role.toLowerCase()}</p>
-          </div>
-        )}
         <button
           onClick={logout}
           className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-destructive hover:bg-destructive/10 transition-colors"
