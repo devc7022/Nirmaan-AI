@@ -2,6 +2,9 @@
   command = "npm run build"
   publish = ".next"
 
+[build.environment]
+  NEXT_PUBLIC_API_URL = "https://nirmaan-api-tz0q.onrender.com"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
