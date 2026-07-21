@@ -1,15 +1,16 @@
 import { z } from 'zod';
 
 export const workerSchema = z.object({
-  workerNumber: z
-    .string()
-    .min(1, 'Worker number is required')
-    .max(50, 'Worker number must be less than 50 characters'),
   fullName: z
     .string()
     .min(1, 'Full name is required')
     .min(3, 'Full name must be at least 3 characters long')
     .max(100, 'Full name must be less than 100 characters'),
+  email: z
+    .string()
+    .email('Please enter a valid email address')
+    .optional()
+    .or(z.literal('')),
   phone: z
     .string()
     .min(1, 'Phone number is required')

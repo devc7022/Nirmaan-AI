@@ -10,7 +10,7 @@ interface WorkerSearchProps {
 export const WorkerSearch: React.FC<WorkerSearchProps> = ({
   value,
   onSearchChange,
-  placeholder = 'Search by name, worker number, phone...',
+  placeholder = 'Search by name, phone...',
 }) => {
   const [localValue, setLocalValue] = useState(value);
 
@@ -36,21 +36,19 @@ export const WorkerSearch: React.FC<WorkerSearchProps> = ({
   };
 
   return (
-    <div className="relative flex-1 min-w-[280px]">
-      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-        <Search className="h-4.5 w-4.5 text-muted-foreground" />
-      </div>
+    <div className="relative flex items-center bg-card/30 border border-border px-3.5 rounded-xl shadow-sm h-12 w-full transition-all focus-within:ring-2 focus-within:ring-ring focus-within:border-ring">
+      <Search className="h-4 w-4 text-muted-foreground shrink-0 mr-2.5" />
       <input
         type="text"
         value={localValue}
         onChange={(e) => setLocalValue(e.target.value)}
         placeholder={placeholder}
-        className="w-full h-10 pl-10 pr-10 border border-border bg-card/30 text-foreground text-sm rounded-xl focus:outline-none focus:ring-2 focus:ring-ring transition-all placeholder:text-muted-foreground"
+        className="w-full h-full bg-transparent text-foreground text-sm focus:outline-none placeholder:text-muted-foreground/70"
       />
       {localValue && (
         <button
           onClick={handleClear}
-          className="absolute inset-y-0 right-0 pr-3 flex items-center text-muted-foreground hover:text-foreground transition-colors"
+          className="p-1 text-muted-foreground hover:text-foreground transition-colors shrink-0 ml-1"
           title="Clear search"
         >
           <X className="h-4 w-4" />

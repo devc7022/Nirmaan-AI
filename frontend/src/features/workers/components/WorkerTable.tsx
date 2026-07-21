@@ -31,7 +31,6 @@ export const WorkerTable: React.FC<WorkerTableProps> = ({
           <TableHeader>
             <TableRow>
               <TableHead className="w-[80px]">Photo</TableHead>
-              <TableHead>Worker ID</TableHead>
               <TableHead>Full Name</TableHead>
               <TableHead>Phone</TableHead>
               <TableHead>Skills</TableHead>
@@ -43,9 +42,6 @@ export const WorkerTable: React.FC<WorkerTableProps> = ({
           </TableHeader>
           <TableBody>
             {workers.map((worker) => {
-              // Generate a deterministic worker number from the ID
-              const workerNumber = `WRK-${worker.id.substring(0, 8).toUpperCase()}`;
-              
               // Calculate daily wage (hourly rate * 8 hours)
               const dailyWage = worker.hourlyRate * 8;
               
@@ -65,9 +61,6 @@ export const WorkerTable: React.FC<WorkerTableProps> = ({
                         className="h-full w-full object-cover"
                       />
                     </div>
-                  </TableCell>
-                  <TableCell className="font-mono text-xs font-semibold text-muted-foreground">
-                    {workerNumber}
                   </TableCell>
                   <TableCell className="font-semibold text-foreground">
                     {worker.name}

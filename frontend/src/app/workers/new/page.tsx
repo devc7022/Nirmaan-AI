@@ -22,9 +22,7 @@ export default function CreateWorkerPage() {
     // Transform form input into DTO format matching backend schemas
     const requestData: WorkerRequest = {
       name: formData.fullName,
-      // Since email is required and must be unique, and the form has no email field, 
-      // we autogenerate a unique dummy email from the phone number
-      email: `worker.${formData.phone.replace(/[^0-9]/g, '')}@nirmaan.ai`,
+      email: formData.email && formData.email.trim() !== '' ? formData.email.trim() : null,
       phone: formData.phone,
       status: formData.status,
       // Conversion: Daily Wage = hourlyRate * 8 -> hourlyRate = dailyWage / 8

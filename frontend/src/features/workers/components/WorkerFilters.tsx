@@ -38,18 +38,18 @@ export const WorkerFilters: React.FC<WorkerFiltersProps> = ({
   const hasActiveFilters = selectedSkill !== '' || selectedSiteId !== '' || selectedStatus !== '';
 
   return (
-    <div className="flex flex-wrap items-center gap-4 bg-card/30 border border-border p-4 rounded-xl shadow-sm">
-      <div className="flex items-center gap-2 text-muted-foreground shrink-0 text-sm font-semibold">
-        <Filter className="h-4 w-4 text-primary" />
-        <span>Filters:</span>
+    <div className="flex items-center gap-3 bg-card/30 border border-border px-3.5 rounded-xl shadow-sm h-12 w-full sm:w-auto">
+      <div className="flex items-center gap-1.5 text-muted-foreground shrink-0 text-xs font-semibold">
+        <Filter className="h-3.5 w-3.5 text-primary" />
+        <span className="hidden sm:inline">Filters:</span>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 flex-1 min-w-[240px]">
+      <div className="flex items-center gap-2">
         {/* Skill Filter */}
         <select
           value={selectedSkill}
           onChange={(e) => onSkillChange(e.target.value)}
-          className="h-9 px-3 border border-border bg-card text-foreground rounded-lg text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-ring cursor-pointer"
+          className="h-8 px-2.5 border border-border bg-card text-foreground rounded-lg text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-ring cursor-pointer min-w-[130px] max-w-[150px] truncate"
         >
           <option value="">All Skills</option>
           {skillOptions.map((skill) => (
@@ -64,7 +64,7 @@ export const WorkerFilters: React.FC<WorkerFiltersProps> = ({
           value={selectedSiteId}
           onChange={(e) => onSiteChange(e.target.value)}
           disabled={isLoadingSites}
-          className="h-9 px-3 border border-border bg-card text-foreground rounded-lg text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-ring cursor-pointer disabled:opacity-55"
+          className="h-8 px-2.5 border border-border bg-card text-foreground rounded-lg text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-ring cursor-pointer disabled:opacity-55 min-w-[130px] max-w-[150px] truncate"
         >
           <option value="">All Sites</option>
           {sites?.map((site) => (
@@ -78,7 +78,7 @@ export const WorkerFilters: React.FC<WorkerFiltersProps> = ({
         <select
           value={selectedStatus}
           onChange={(e) => onStatusChange(e.target.value as WorkerStatus | '')}
-          className="h-9 px-3 border border-border bg-card text-foreground rounded-lg text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-ring cursor-pointer"
+          className="h-8 px-2.5 border border-border bg-card text-foreground rounded-lg text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-ring cursor-pointer min-w-[130px] max-w-[150px] truncate"
         >
           <option value="">All Statuses</option>
           <option value="ACTIVE">ACTIVE</option>
@@ -90,11 +90,11 @@ export const WorkerFilters: React.FC<WorkerFiltersProps> = ({
       {hasActiveFilters && (
         <button
           onClick={onReset}
-          className="flex items-center justify-center gap-1.5 h-9 px-4 text-xs font-semibold border border-border hover:bg-muted text-muted-foreground hover:text-foreground rounded-lg transition-all"
+          className="flex items-center justify-center gap-1 h-8 px-2.5 text-xs font-semibold border border-border hover:bg-muted text-muted-foreground hover:text-foreground rounded-lg transition-all shrink-0"
           title="Clear Filters"
         >
-          <RefreshCw className="h-3.5 w-3.5" />
-          Clear
+          <RefreshCw className="h-3 w-3" />
+          <span className="hidden lg:inline">Clear</span>
         </button>
       )}
     </div>

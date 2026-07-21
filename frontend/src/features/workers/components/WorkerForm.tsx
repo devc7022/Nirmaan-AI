@@ -37,8 +37,8 @@ export const WorkerForm: React.FC<WorkerFormProps> = ({
   // Set default values based on whether we are in create or edit mode
   const defaultValues: WorkerInput = isEditMode && initialData
     ? {
-      workerNumber: `WRK-${initialData.id.substring(0, 8).toUpperCase()}`,
       fullName: initialData.name,
+      email: initialData.email || '',
       phone: initialData.phone,
       address: 'Mumbai, Maharashtra', // Mock placeholder address
       skill: initialData.skills[0] || 'Laboring',
@@ -51,8 +51,8 @@ export const WorkerForm: React.FC<WorkerFormProps> = ({
       photoUrl: `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(initialData.name)}`,
     }
     : {
-      workerNumber: `WRK-${Math.floor(100000 + Math.random() * 900000)}`, // Auto generate code
       fullName: '',
+      email: '',
       phone: '',
       address: '',
       skill: '',
@@ -87,20 +87,6 @@ export const WorkerForm: React.FC<WorkerFormProps> = ({
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 max-w-2xl bg-card/40 backdrop-blur-sm border border-border p-6 rounded-2xl shadow-sm">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        {/* Worker Number (disabled in edit mode) */}
-        <div className="space-y-2">
-          <Label htmlFor="workerNumber">Worker ID (Unique Code)</Label>
-          <Input
-            id="workerNumber"
-            disabled={true} // Worker Number should be immutable/readOnly as requested
-            className="bg-muted/50 cursor-not-allowed font-mono font-semibold"
-            {...register('workerNumber')}
-          />
-          {errors.workerNumber && (
-            <p className="text-xs text-destructive font-medium">{errors.workerNumber.message}</p>
-          )}
-        </div>
-
         {/* Full Name */}
         <div className="space-y-2">
           <Label htmlFor="fullName">Full Name *</Label>
@@ -113,6 +99,22 @@ export const WorkerForm: React.FC<WorkerFormProps> = ({
           />
           {errors.fullName && (
             <p className="text-xs text-destructive font-medium">{errors.fullName.message}</p>
+          )}
+        </div>
+
+        {/* Email */}
+        <div className="space-y-2">
+          <Label htmlFor="email">Email</Label>
+          <Input
+            id="email"
+            type="email"
+            placeholder="aarav.sharma@example.com"
+            disabled={isLoading}
+            className={errors.email ? 'border-destructive focus-visible:ring-destructive' : ''}
+            {...register('email')}
+          />
+          {errors.email && (
+            <p className="text-xs text-destructive font-medium">{errors.email.message}</p>
           )}
         </div>
 

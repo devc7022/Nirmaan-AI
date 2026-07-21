@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { ProtectedRoute } from '@/components/protected-route';
 import { DashboardLayout } from '@/components/layout/dashboard-layout';
@@ -13,7 +13,7 @@ import { WorkerInput } from '@/features/workers/schemas/worker-schema';
 import { WorkerRequest } from '@/features/workers/types';
 import { CheckCircle, AlertCircle } from 'lucide-react';
 
-export default function WorkerDetailsPage() {
+function WorkerDetailsPageContent() {
   const router = useRouter();
   const params = useParams();
   const searchParams = useSearchParams();
@@ -46,7 +46,7 @@ export default function WorkerDetailsPage() {
     // Transform form input into DTO format matching backend schemas
     const requestData: WorkerRequest = {
       name: formData.fullName,
-      email: worker?.email || `worker.${formData.phone.replace(/[^0-9]/g, '')}@nirmaan.ai`,
+      email: formData.email && formData.email.trim() !== '' ? formData.email.trim() : null,
       phone: formData.phone,
       status: formData.status,
       // Conversion: Daily Wage = hourlyRate * 8 -> hourlyRate = dailyWage / 8
@@ -202,5 +202,23 @@ export default function WorkerDetailsPage() {
         </div>
       </DashboardLayout>
     </ProtectedRoute>
+  );
+}
+
+export default function WorkerDetailsPage() {
+  return (
+    <Suspense
+      fallback={
+        <ProtectedRoute allowedRoles={['ADMIN', 'SUPERVISOR', 'CONTRACTOR']}>
+          <DashboardLayout>
+            <div className="mx-auto max-w-4xl space-y-6 relative pb-12">
+              <div className="h-[300px] w-full bg-muted/50 rounded-xl border border-muted animate-pulse" />
+            </div>
+          </DashboardLayout>
+        </ProtectedRoute>
+      }
+    >
+      <WorkerDetailsPageContent />
+    </Suspense>
   );
 }

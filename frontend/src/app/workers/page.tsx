@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { ProtectedRoute } from '@/components/protected-route';
 import { DashboardLayout } from '@/components/layout/dashboard-layout';
@@ -15,7 +15,7 @@ import { DeleteDialog } from '@/features/workers/components/DeleteDialog';
 import { WorkerStatus, WorkerResponse } from '@/features/workers/types';
 import { Plus, Users, ChevronLeft, ChevronRight, CheckCircle, AlertCircle } from 'lucide-react';
 
-export default function WorkersListPage() {
+function WorkersListPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -41,7 +41,7 @@ export default function WorkersListPage() {
       setToast({ message, type: 'success' });
       // Clear URL params
       router.replace('/workers');
-      
+
       const timer = setTimeout(() => setToast(null), 4000);
       return () => clearTimeout(timer);
     }
@@ -112,7 +112,7 @@ export default function WorkersListPage() {
           setDeletingWorker(null);
           setToast({ message: 'Worker Deleted successfully', type: 'success' });
           refetch();
-          
+
           setTimeout(() => setToast(null), 4000);
         },
         onError: (err: any) => {
@@ -143,15 +143,14 @@ export default function WorkersListPage() {
     <ProtectedRoute allowedRoles={['ADMIN', 'SUPERVISOR', 'CONTRACTOR']}>
       <DashboardLayout>
         <div className="mx-auto max-w-7xl space-y-6 relative pb-12">
-          
+
           {/* Success Toast */}
           {toast && (
             <div
-              className={`fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3.5 rounded-xl shadow-2xl animate-in fade-in slide-in-from-bottom-6 duration-300 border ${
-                toast.type === 'success'
+              className={`fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3.5 rounded-xl shadow-2xl animate-in fade-in slide-in-from-bottom-6 duration-300 border ${toast.type === 'success'
                   ? 'bg-emerald-500 border-emerald-400 text-white'
                   : 'bg-destructive border-destructive-400 text-destructive-foreground'
-              }`}
+                }`}
             >
               {toast.type === 'success' ? (
                 <CheckCircle className="h-5 w-5 shrink-0" />
@@ -182,19 +181,19 @@ export default function WorkersListPage() {
           </div>
 
           {/* Search and Filters Bar */}
-          <div className="flex flex-col md:flex-row gap-4">
-            <WorkerSearch value={search} onSearchChange={handleSearchChange} />
-            <div className="flex-1 min-w-[280px]">
-              <WorkerFilters
-                selectedSkill={skill}
-                selectedSiteId={siteId}
-                selectedStatus={status}
-                onSkillChange={handleSkillChange}
-                onSiteChange={handleSiteChange}
-                onStatusChange={handleStatusChange}
-                onReset={handleResetFilters}
-              />
+          <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
+            <div className="w-full sm:w-80 sm:shrink-0">
+              <WorkerSearch value={search} onSearchChange={handleSearchChange} />
             </div>
+            <WorkerFilters
+              selectedSkill={skill}
+              selectedSiteId={siteId}
+              selectedStatus={status}
+              onSkillChange={handleSkillChange}
+              onSiteChange={handleSiteChange}
+              onStatusChange={handleStatusChange}
+              onReset={handleResetFilters}
+            />
           </div>
 
           {/* Content Loading & Error Boundaries */}
@@ -231,7 +230,7 @@ export default function WorkersListPage() {
           ) : (
             /* Data Tables List */
             <div className="space-y-4">
-              
+
               {/* Desktop Table View */}
               <div className="hidden md:block">
                 <WorkerTable
@@ -326,5 +325,23 @@ export default function WorkersListPage() {
         </div>
       </DashboardLayout>
     </ProtectedRoute>
+  );
+}
+
+export default function WorkersListPage() {
+  return (
+    <Suspense
+      fallback={
+        <ProtectedRoute allowedRoles={['ADMIN', 'SUPERVISOR', 'CONTRACTOR']}>
+          <DashboardLayout>
+            <div className="mx-auto max-w-7xl space-y-6 relative pb-12">
+              <div className="h-[400px] w-full bg-muted/50 rounded-xl border border-muted animate-pulse" />
+            </div>
+          </DashboardLayout>
+        </ProtectedRoute>
+      }
+    >
+      <WorkersListPageContent />
+    </Suspense>
   );
 }
