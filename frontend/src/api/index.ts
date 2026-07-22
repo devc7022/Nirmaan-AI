@@ -49,7 +49,10 @@ apiClient.interceptors.response.use(
   async (error) => {
     const originalRequest = error.config;
 
-    if (error.response?.status === 401 && !originalRequest._retry) {
+    // Do NOT attempt token refresh or window location redirects for public auth endpoints
+    const isAuthEndpoint = originalRequest?.url?.includes('/api/public/auth');
+
+    if (error.response?.status === 401 && !originalRequest?._retry && !isAuthEndpoint) {
       if (isRefreshing) {
         return new Promise((resolve, reject) => {
           failedQueue.push({ resolve, reject });
@@ -68,7 +71,7 @@ apiClient.interceptors.response.use(
 
       if (!refreshToken) {
         isRefreshing = false;
-        if (typeof window !== 'undefined') {
+        if (typeof window !== 'undefined' && window.location.pathname !== '/login') {
           localStorage.removeItem('accessToken');
           localStorage.removeItem('refreshToken');
           sessionStorage.removeItem('accessToken');
@@ -107,7 +110,7 @@ apiClient.interceptors.response.use(
         processQueue(refreshError, null);
         isRefreshing = false;
 
-        if (typeof window !== 'undefined') {
+        if (typeof window !== 'undefined' && window.location.pathname !== '/login') {
           localStorage.removeItem('accessToken');
           localStorage.removeItem('refreshToken');
           sessionStorage.removeItem('accessToken');
