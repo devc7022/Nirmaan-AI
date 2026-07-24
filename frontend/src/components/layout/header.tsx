@@ -3,15 +3,30 @@
 import React from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useTheme } from '@/contexts/ThemeContext';
-import { User, Bell, Sun, Moon } from 'lucide-react';
+import { User, Bell, Sun, Moon, Menu } from 'lucide-react';
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  isSidebarOpen?: boolean;
+  onToggleSidebar?: () => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ isSidebarOpen = true, onToggleSidebar }) => {
   const { user } = useAuth();
   const { theme, toggleTheme } = useTheme();
 
   return (
     <header className="h-16 bg-card border-b border-border px-6 flex items-center justify-between sticky top-0 z-30 shadow-sm">
-      <div>
+      <div className="flex items-center gap-3">
+        {!isSidebarOpen && onToggleSidebar && (
+          <button
+            onClick={onToggleSidebar}
+            className="p-2 text-muted-foreground hover:text-foreground rounded-lg hover:bg-muted transition-colors flex items-center justify-center"
+            title="Open sidebar"
+            aria-label="Open sidebar"
+          >
+            <Menu className="h-5 w-5" />
+          </button>
+        )}
         <h2 className="text-lg font-bold text-foreground">
           Welcome Back, <span className="text-primary">{user?.name || 'Guest'}</span>
         </h2>
