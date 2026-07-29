@@ -3,28 +3,28 @@
 :root {
   --background: #ffffff;
   --foreground: #09090b;
-  
+
   --card: #ffffff;
   --card-foreground: #09090b;
-  
+
   --popover: #ffffff;
   --popover-foreground: #09090b;
-  
+
   --primary: #f97316;
   --primary-foreground: #ffffff;
-  
+
   --secondary: #f4f4f5;
   --secondary-foreground: #18181b;
-  
+
   --muted: #f4f4f5;
   --muted-foreground: #71717a;
-  
+
   --accent: #f4f4f5;
   --accent-foreground: #18181b;
-  
+
   --destructive: #ef4444;
   --destructive-foreground: #fafafa;
-  
+
   --border: #e4e4e7;
   --input: #e4e4e7;
   --ring: #f97316;
@@ -33,28 +33,28 @@
 html.dark {
   --background: #09090b;
   --foreground: #fafafa;
-  
+
   --card: #18181b;
   --card-foreground: #fafafa;
-  
+
   --popover: #09090b;
   --popover-foreground: #fafafa;
-  
+
   --primary: #ea580c;
   --primary-foreground: #ffffff;
-  
+
   --secondary: #27272a;
   --secondary-foreground: #fafafa;
-  
+
   --muted: #27272a;
   --muted-foreground: #a1a1aa;
-  
+
   --accent: #27272a;
   --accent-foreground: #fafafa;
-  
+
   --destructive: #ef4444;
   --destructive-foreground: #fafafa;
-  
+
   --border: #27272a;
   --input: #27272a;
   --ring: #ea580c;
@@ -93,6 +93,17 @@ body {
 }
 
 /* Add smooth transitions to elements when theme toggles */
-header, aside, main, div, button, table, tr, th, td, input, label, span {
+header,
+aside,
+main,
+div,
+button,
+table,
+tr,
+th,
+td,
+input,
+label,
+span {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }

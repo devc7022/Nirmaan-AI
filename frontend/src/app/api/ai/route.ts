@@ -6,11 +6,8 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { prompt, systemInstruction } = body;
 
-    // Retrieve server-side secret API key (NEVER exposed to the browser bundle)
-    const apiKey =
-      process.env.GEMINI_API_KEY ||
-      process.env.NEXT_PUBLIC_GEMINI_API_KEY ||
-      'AQ.Ab8RN6IVO1Vahm1dLbeWFwYJy4trkvn56aVgnCoDXtJQ_EPdPA';
+    // Retrieve server-side secret API key from environment variables (e.g. Netlify/Vercel)
+    const apiKey = process.env.GEMINI_API_KEY || process.env.NEXT_PUBLIC_GEMINI_API_KEY;
 
     if (!apiKey) {
       return NextResponse.json(

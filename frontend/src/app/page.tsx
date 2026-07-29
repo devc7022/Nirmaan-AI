@@ -1,23 +1,93 @@
 'use client';
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { useAuth } from '@/contexts/AuthContext';
-import { Loading } from '@/components/ui/loading';
+import React, { useState, useEffect } from 'react';
+import { Navbar } from '@/components/landing/Navbar';
+import { Hero } from '@/components/landing/Hero';
+import { TrustSection } from '@/components/landing/TrustSection';
+import { ProblemSection } from '@/components/landing/ProblemSection';
+import { SolutionSection } from '@/components/landing/SolutionSection';
+import { FeaturesSection } from '@/components/landing/FeaturesSection';
+import { HowItWorks } from '@/components/landing/HowItWorks';
+import { AIDemo } from '@/components/landing/AIDemo';
+import { DashboardPreview } from '@/components/landing/DashboardPreview';
+import { WhyNirmaan } from '@/components/landing/WhyNirmaan';
+import { Testimonials } from '@/components/landing/Testimonials';
+import { FAQSection } from '@/components/landing/FAQSection';
+import { CTASection } from '@/components/landing/CTASection';
+import { Footer } from '@/components/landing/Footer';
+import { DemoModal } from '@/components/landing/DemoModal';
+import { ContactModal } from '@/components/landing/ContactModal';
 
 export default function Home() {
-  const { isAuthenticated, isLoading } = useAuth();
-  const router = useRouter();
+  const [isDemoOpen, setIsDemoOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   useEffect(() => {
-    if (!isLoading) {
-      if (isAuthenticated) {
-        router.push('/dashboard');
-      } else {
-        router.push('/login');
-      }
-    }
-  }, [isLoading, isAuthenticated, router]);
+    // Set root html and body background to dark zinc while on landing page to prevent white overscroll bounce
+    const originalHtmlBg = document.documentElement.style.backgroundColor;
+    const originalBodyBg = document.body.style.backgroundColor;
+    
+    document.documentElement.style.backgroundColor = '#09090b';
+    document.body.style.backgroundColor = '#09090b';
 
-  return <Loading fullScreen message="Redirecting..." />;
+    return () => {
+      document.documentElement.style.backgroundColor = originalHtmlBg;
+      document.body.style.backgroundColor = originalBodyBg;
+    };
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-zinc-950 text-white selection:bg-orange-500 selection:text-white font-sans antialiased">
+      {/* Sticky Glassmorphic Navbar */}
+      <Navbar
+        onOpenContact={() => setIsContactOpen(true)}
+        onOpenDemo={() => setIsDemoOpen(true)}
+      />
+
+      <main>
+        {/* Hero Section */}
+        <Hero onOpenDemo={() => setIsDemoOpen(true)} />
+
+        {/* Built For Trust Section */}
+        <TrustSection />
+
+        {/* Problem Section */}
+        <ProblemSection />
+
+        {/* Meet Nirmaan AI Solution Section */}
+        <SolutionSection />
+
+        {/* Features Grid */}
+        <FeaturesSection />
+
+        {/* How It Works Timeline */}
+        <HowItWorks />
+
+        {/* Live Interactive AI Sandbox Demo */}
+        <AIDemo />
+
+        {/* Dashboard Analytics Preview */}
+        <DashboardPreview />
+
+        {/* Why Choose Nirmaan AI Benefits */}
+        <WhyNirmaan />
+
+        {/* Testimonials */}
+        <Testimonials />
+
+        {/* FAQ Accordion */}
+        <FAQSection />
+
+        {/* Call To Action Banner */}
+        <CTASection />
+      </main>
+
+      {/* Footer */}
+      <Footer onOpenContact={() => setIsContactOpen(true)} />
+
+      {/* Interactive Modals */}
+      <DemoModal isOpen={isDemoOpen} onClose={() => setIsDemoOpen(false)} />
+      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
+    </div>
+  );
 }
