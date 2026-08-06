@@ -54,6 +54,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onToggle }) => 
                   width={36}
                   height={36}
                   className="object-contain w-full h-full"
+                  unoptimized
+                  priority
                 />
               </div>
               <span className="font-extrabold text-xl tracking-tight bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent truncate">

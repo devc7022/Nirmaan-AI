@@ -30,6 +30,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
                   width={40}
                   height={40}
                   className="object-contain w-full h-full"
+                  unoptimized
                 />
               </div>
               <span className="text-xl font-extrabold text-white tracking-tight">

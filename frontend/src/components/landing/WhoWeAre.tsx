@@ -120,6 +120,7 @@ export const WhoWeAre: React.FC = () => {
                   width={120}
                   height={120}
                   className="object-contain drop-shadow-[0_10px_20px_rgba(249,115,22,0.3)]"
+                  unoptimized
                 />
               </div>
 

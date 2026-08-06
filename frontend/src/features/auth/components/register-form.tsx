@@ -80,6 +80,8 @@ export const RegisterForm: React.FC = () => {
             width={64}
             height={64}
             className="object-contain w-full h-full"
+            unoptimized
+            priority
           />
         </div>
         <CardTitle className="text-2xl font-extrabold tracking-tight">Create an Account</CardTitle>

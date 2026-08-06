@@ -55,6 +55,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenDemo }) => 
                 width={40}
                 height={40}
                 className="object-contain w-full h-full"
+                unoptimized
+                priority
               />
             </div>
             <div className="flex flex-col">
