@@ -9,24 +9,24 @@ export const FAQSection: React.FC = () => {
 
   const faqs = [
     {
-      question: 'What is Nirmaan AI?',
-      answer: 'Nirmaan AI is an AI-powered construction workforce management platform designed specifically for contractors, construction firms, and site supervisors. It replaces physical muster books and manual spreadsheets with an intelligent AI assistant that parses natural voice/text updates into verified daily attendance, overtime, and payroll reports.',
+      question: 'What is BuilMate AI?',
+      answer: 'BuilMate AI is an AI-powered construction workforce management platform designed specifically for contractors, construction firms, and site supervisors. It replaces physical muster books and manual spreadsheets with an intelligent AI assistant that parses natural voice/text updates into verified daily attendance, overtime, and payroll reports.',
     },
     {
       question: 'Who can use it?',
-      answer: 'Nirmaan AI is built for civil contractors, general contracting firms, real estate developers, site supervisors, site engineers, and labour suppliers. Roles can be configured for Admins (managing budgets & multi-site analytics), Supervisors (recording daily worker logs), and Contractors (tracking deployed manpower & wage receipts).',
+      answer: 'BuilMate AI is built for civil contractors, general contracting firms, real estate developers, site supervisors, site engineers, and labour suppliers. Roles can be configured for Admins (managing budgets & multi-site analytics), Supervisors (recording daily worker logs), and Contractors (tracking deployed manpower & wage receipts).',
     },
     {
       question: 'Is AI attendance accurate?',
-      answer: 'Yes! Nirmaan AI is trained on Hindi, English, and Hinglish construction terminology (such as "Mason", "Rajmistri", "Beldar", "Helper", "Overtime", "Half-Day"). The AI cross-references worker profiles and presents a structured preview with 99.8% confidence before saving, giving supervisors full 1-click verification authority.',
+      answer: 'Yes! BuilMate AI is trained on Hindi, English, and Hinglish construction terminology (such as "Mason", "Rajmistri", "Beldar", "Helper", "Overtime", "Half-Day"). The AI cross-references worker profiles and presents a structured preview with 99.8% confidence before saving, giving supervisors full 1-click verification authority.',
     },
     {
       question: 'How does reporting work?',
-      answer: 'With one click, Nirmaan AI generates instant PDF and Excel reports for daily attendance muster, weekly wage calculation, skill trade breakdowns, and contractor payout summaries. Reports can be exported directly or shared via WhatsApp and email.',
+      answer: 'With one click, BuilMate AI generates instant PDF and Excel reports for daily attendance muster, weekly wage calculation, skill trade breakdowns, and contractor payout summaries. Reports can be exported directly or shared via WhatsApp and email.',
     },
     {
       question: 'Can it handle multiple construction sites simultaneously?',
-      answer: 'Absolutely. Nirmaan AI supports unlimited construction sites. Enterprise administrators can view live headcounts, active site cost charts, and supervisor submission status across all locations from a single central dashboard.',
+      answer: 'Absolutely. BuilMate AI supports unlimited construction sites. Enterprise administrators can view live headcounts, active site cost charts, and supervisor submission status across all locations from a single central dashboard.',
     },
   ];
 
@@ -48,7 +48,7 @@ export const FAQSection: React.FC = () => {
             Frequently Asked <span className="bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent">Questions</span>
           </h2>
           <p className="text-sm sm:text-base text-zinc-400 max-w-xl mx-auto">
-            Everything you need to know about setting up Nirmaan AI on your construction sites.
+            Everything you need to know about setting up BuilMate AI on your construction sites.
           </p>
         </div>
 

@@ -2,12 +2,12 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import {
   LayoutDashboard,
   Users,
-  HardHat,
   ClipboardCheck,
   LogOut,
   Building2,
@@ -47,9 +47,17 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onToggle }) => 
           {/* Logo Branding & Top Close Button */}
           <div className="p-4 border-b border-border flex items-center justify-between h-16">
             <div className="flex items-center gap-3 overflow-hidden">
-              <HardHat className="h-8 w-8 text-primary animate-pulse shrink-0" />
+              <div className="relative w-9 h-9 flex items-center justify-center shrink-0">
+                <Image
+                  src="/images/builmate_logo_hd.png"
+                  alt="BuilMate AI Logo"
+                  width={36}
+                  height={36}
+                  className="object-contain w-full h-full"
+                />
+              </div>
               <span className="font-extrabold text-xl tracking-tight bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent truncate">
-                Nirmaan AI
+                BuilMate AI
               </span>
             </div>
 

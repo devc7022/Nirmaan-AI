@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { loginSchema, LoginInput } from '../schemas/login-schema';
@@ -17,7 +18,7 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from '@/components/ui/button';
-import { Loader2, AlertCircle, HardHat } from 'lucide-react';
+import { Loader2, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
 
 export const LoginForm: React.FC = () => {
@@ -73,10 +74,16 @@ export const LoginForm: React.FC = () => {
       <div className="h-1.5 w-full bg-gradient-to-r from-primary via-orange-500 to-amber-500" />
       
       <CardHeader className="space-y-1.5 items-center pb-2">
-        <div className="p-3 bg-primary/10 rounded-full border border-primary/20 mb-2">
-          <HardHat className="h-8 w-8 text-primary animate-bounce" />
+        <div className="mb-2 w-16 h-16 flex items-center justify-center">
+          <Image
+            src="/images/builmate_logo_hd.png"
+            alt="BuilMate AI Logo"
+            width={64}
+            height={64}
+            className="object-contain w-full h-full"
+          />
         </div>
-        <CardTitle className="text-2xl font-extrabold tracking-tight">Sign In to Nirmaan AI</CardTitle>
+        <CardTitle className="text-2xl font-extrabold tracking-tight">Sign In to BuilMate AI</CardTitle>
         <CardDescription className="text-center text-muted-foreground text-sm">
           Enter your admin credentials to access your contractor dashboard
         </CardDescription>
@@ -96,7 +103,7 @@ export const LoginForm: React.FC = () => {
             <Input
               id="email"
               type="email"
-              placeholder="name@nirmaan.ai"
+              placeholder="name@builmate.ai"
               disabled={isLoading}
               className={errors.email ? 'border-destructive focus-visible:ring-destructive' : ''}
               {...register('email')}

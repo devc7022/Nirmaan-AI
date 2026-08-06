@@ -54,7 +54,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                 <Building2 className="w-4 h-4" />
               </div>
               <div>
-                <h3 className="text-base font-bold text-white">Contact Nirmaan AI Sales & Support</h3>
+                <h3 className="text-base font-bold text-white">Contact BuilMate AI Sales & Support</h3>
                 <p className="text-xs text-zinc-400">Get a custom demo for your construction enterprise</p>
               </div>
             </div>

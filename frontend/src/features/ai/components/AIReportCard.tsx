@@ -77,7 +77,7 @@ export const AIReportCard: React.FC<AIReportCardProps> = ({ onShowToast }) => {
     const link = document.createElement('a');
     link.href = url;
     const dateSlug = new Date().toISOString().split('T')[0];
-    link.download = `nirmaan-ai-workforce-report-${dateSlug}.txt`;
+    link.download = `builmate-ai-workforce-report-${dateSlug}.txt`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

@@ -34,7 +34,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                  Nirmaan AI Interactive Product Tour
+                  BuilMate AI Interactive Product Tour
                   <span className="text-xs px-2 py-0.5 rounded-full bg-orange-500/20 text-orange-400 border border-orange-500/30">
                     Live Interactive Demo
                   </span>
@@ -165,7 +165,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                   <Zap className="w-4 h-4" />
                   <span>Natural Language AI</span>
                 </div>
-                <p className="text-xs text-zinc-400">Speak or text in Hindi, English, or Hinglish. Nirmaan AI parses workers and hours instantly.</p>
+                <p className="text-xs text-zinc-400">Speak or text in Hindi, English, or Hinglish. BuilMate AI parses workers and hours instantly.</p>
               </div>
 
               <div className="p-4 rounded-xl bg-zinc-950/50 border border-zinc-800 space-y-1.5">

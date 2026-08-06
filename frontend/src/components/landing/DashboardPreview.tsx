@@ -95,7 +95,7 @@ export const DashboardPreview: React.FC = () => {
           <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-zinc-800">
             <div className="flex items-center space-x-3">
               <span className="text-sm font-bold text-white flex items-center gap-2">
-                Nirmaan AI Central Dashboard Preview
+                BuilMate AI Central Dashboard Preview
                 <span className="text-[10px] px-2 py-0.5 rounded bg-orange-500/20 text-orange-400 border border-orange-500/30">
                   Live Sync
                 </span>

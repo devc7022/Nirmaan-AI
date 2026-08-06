@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { HardHat, Mail, Heart, ShieldCheck, FileText, X } from 'lucide-react';
+import Image from 'next/image';
+import { Mail, Heart, ShieldCheck, FileText, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface FooterProps {
@@ -22,11 +23,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
           {/* Brand Col */}
           <div className="md:col-span-5 space-y-4">
             <Link href="#" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 via-amber-500 to-orange-600 flex items-center justify-center text-white shadow-lg shadow-orange-500/20 group-hover:scale-105 transition-transform">
-                <HardHat className="w-5 h-5 stroke-[2.2]" />
+              <div className="w-10 h-10 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <Image
+                  src="/images/builmate_logo_hd.png"
+                  alt="BuilMate AI Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain w-full h-full"
+                />
               </div>
               <span className="text-xl font-extrabold text-white tracking-tight">
-                Nirmaan <span className="text-orange-500">AI</span>
+                BuilMate <span className="text-orange-500">AI</span>
               </span>
             </Link>
 
@@ -71,7 +78,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
                 <a href="#how-it-works" className="hover:text-orange-400 transition-colors">How It Works</a>
               </li>
               <li>
-                <a href="#why-nirmaan" className="hover:text-orange-400 transition-colors">Why Choose Nirmaan AI</a>
+                <a href="#why-builmate" className="hover:text-orange-400 transition-colors">Why Choose BuilMate AI</a>
               </li>
               <li>
                 <a href="#demo" className="hover:text-orange-400 transition-colors">Live AI Sandbox</a>
@@ -116,7 +123,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400">
-          <p>© 2026 Team Nirmaan. All rights reserved.</p>
+          <p>© 2026 BuilMate AI. All rights reserved.</p>
           <p className="flex items-center gap-1 text-[11px] text-zinc-400">
             Crafted for the Indian Construction Industry
           </p>
@@ -136,7 +143,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
             >
               <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
                 <h3 className="text-lg font-bold text-white">
-                  {activeModal === 'privacy' ? 'Nirmaan AI Privacy Policy' : 'Terms of Service'}
+                  {activeModal === 'privacy' ? 'BuilMate AI Privacy Policy' : 'Terms of Service'}
                 </h3>
                 <button
                   onClick={() => setActiveModal(null)}
@@ -148,19 +155,19 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
               <div className="text-xs text-zinc-300 space-y-3 leading-relaxed">
                 {activeModal === 'privacy' ? (
                   <>
-                    <p>At Nirmaan AI, we prioritize the confidentiality and protection of site attendance records, biometric logs, and contractor financial transactions.</p>
+                    <p>At BuilMate AI, we prioritize the confidentiality and protection of site attendance records, biometric logs, and contractor financial transactions.</p>
                     <h5 className="font-bold text-white pt-2">Data Protection:</h5>
                     <p>All worker records and site financial data are encrypted at rest and in transit using TLS 1.3 encryption. We never sell site operational data to third parties.</p>
                     <h5 className="font-bold text-white pt-2">AI Data Processing:</h5>
-                    <p>Natural language voice updates processed by Nirmaan AI are handled solely for structural parsing and profile matching on your registered tenant database.</p>
+                    <p>Natural language voice updates processed by BuilMate AI are handled solely for structural parsing and profile matching on your registered tenant database.</p>
                   </>
                 ) : (
                   <>
-                    <p>By using Nirmaan AI, you agree to adhere to standard operational site guidelines for attendance logging and wage administration.</p>
+                    <p>By using BuilMate AI, you agree to adhere to standard operational site guidelines for attendance logging and wage administration.</p>
                     <h5 className="font-bold text-white pt-2">Account Responsibility:</h5>
                     <p>Site supervisors and administrators are responsible for verifying natural language AI suggestions before confirming final payroll payouts.</p>
                     <h5 className="font-bold text-white pt-2">SaaS Availability:</h5>
-                    <p>Nirmaan AI provides a 99.9% uptime SLA for multi-site synchronization and real-time dashboard analytics.</p>
+                    <p>BuilMate AI provides a 99.9% uptime SLA for multi-site synchronization and real-time dashboard analytics.</p>
                   </>
                 )}
               </div>

@@ -62,7 +62,7 @@ export const aiService = {
     }
 
     try {
-      const systemInstruction = `You are an AI assistant for Nirmaan AI Construction Management. Extract attendance details from natural language input. Return ONLY a valid JSON object matching this structure:
+      const systemInstruction = `You are an AI assistant for BuilMate AI Construction Management. Extract attendance details from natural language input. Return ONLY a valid JSON object matching this structure:
 {
   "workerName": "string",
   "siteName": "string",
@@ -128,7 +128,7 @@ Ensure no markdown code block text wraps the output, only valid raw JSON.`;
     }
 
     try {
-      const systemInstruction = `You are Nirmaan AI Workforce Assistant, an expert AI for construction site management, labor tracking, safety compliance, site attendance, and cost optimization. Give professional, helpful, accurate markdown responses. Keep responses structured and concise.`;
+      const systemInstruction = `You are BuilMate AI Workforce Assistant, an expert AI for construction site management, labor tracking, safety compliance, site attendance, and cost optimization. Give professional, helpful, accurate markdown responses. Keep responses structured and concise.`;
 
       const reply = await callGeminiAPI(data.message, systemInstruction);
       return {
@@ -166,7 +166,7 @@ Ensure no markdown code block text wraps the output, only valid raw JSON.`;
         day: 'numeric',
       });
 
-      const systemInstruction = `You are an expert construction site auditor for Nirmaan AI. Generate a professional Daily Workforce Report in markdown. Include Executive Overview, Site Breakdown, Trade Distributions, Logged Hours, and Actionable Safety Recommendations.`;
+      const systemInstruction = `You are an expert construction site auditor for BuilMate AI. Generate a professional Daily Workforce Report in markdown. Include Executive Overview, Site Breakdown, Trade Distributions, Logged Hours, and Actionable Safety Recommendations.`;
 
       const content = await callGeminiAPI(
         `Generate today's complete daily workforce summary report for ${todayStr}.`,
@@ -296,7 +296,7 @@ function mockDailyReport(): DailyReport {
     day: 'numeric',
   });
 
-  const content = `# 🏗️ Nirmaan AI - Daily Workforce Summary Report
+  const content = `# 🏗️ BuilMate AI - Daily Workforce Summary Report
 **Date:** ${todayStr}
 **Status:** Operational Summary Verified
 
@@ -333,7 +333,7 @@ function mockDailyReport(): DailyReport {
 1. **Resource Reallocation:** Consider shifting 2 helper workers from Metro Line to River Bridge to make up for absences.
 2. **Safety Check:** Ensure all high-voltage electrical inspections are signed off by Ramesh Kumar before EOD.
 
-*Report generated automatically by Nirmaan AI Workforce Assistant.*`;
+*Report generated automatically by BuilMate AI Workforce Assistant.*`;
 
   return {
     id: `report-${Date.now()}`,

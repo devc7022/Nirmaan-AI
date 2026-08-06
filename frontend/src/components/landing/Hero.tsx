@@ -111,7 +111,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
                   <div className="w-3 h-3 rounded-full bg-red-500/80" />
                   <div className="w-3 h-3 rounded-full bg-amber-500/80" />
                   <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                  <span className="text-xs font-mono text-zinc-400 ml-2">nirmaan-ai // site-commander</span>
+                  <span className="text-xs font-mono text-zinc-400 ml-2">builmate-ai // site-commander</span>
                 </div>
                 <span className="text-[11px] font-medium px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>

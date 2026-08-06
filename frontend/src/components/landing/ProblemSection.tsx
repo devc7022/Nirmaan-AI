@@ -105,7 +105,7 @@ export const ProblemSection: React.FC = () => {
           <div className="absolute top-0 right-0 w-48 h-48 bg-orange-500/10 rounded-full blur-2xl" />
           
           <h3 className="text-center text-lg font-bold text-white mb-6">
-            Contrast: The Traditional Way vs. The Nirmaan AI Standard
+            Contrast: The Traditional Way vs. The BuilMate AI Standard
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
@@ -129,11 +129,11 @@ export const ProblemSection: React.FC = () => {
               </ul>
             </div>
 
-            {/* The Nirmaan AI Way */}
+            {/* The BuilMate AI Way */}
             <div className="p-5 rounded-xl bg-emerald-950/20 border border-emerald-900/40 space-y-3">
               <div className="flex items-center space-x-2 text-emerald-400 font-bold text-sm border-b border-emerald-900/40 pb-2">
                 <CheckCircle2 className="w-4 h-4" />
-                <span>The Nirmaan AI Standard</span>
+                <span>The BuilMate AI Standard</span>
               </div>
               <ul className="space-y-2 text-xs text-zinc-200">
                 <li className="flex items-start gap-2">

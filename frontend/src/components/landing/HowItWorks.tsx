@@ -46,14 +46,14 @@ export const HowItWorks: React.FC = () => {
       <div className="absolute top-1/2 right-10 w-96 h-96 bg-amber-500/10 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center space-y-4 max-w-3xl mx-auto mb-20">
           <div className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20">
             <span>Simple 4-Step Process</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-            How Nirmaan AI Works in{' '}
+            How BuilMate Works in{' '}
             <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 bg-clip-text text-transparent">
               4 Easy Steps
             </span>
@@ -65,7 +65,7 @@ export const HowItWorks: React.FC = () => {
 
         {/* Timeline Cards Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          
+
           {steps.map((item, index) => {
             const Icon = item.icon;
             return (

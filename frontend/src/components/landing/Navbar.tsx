@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { HardHat, Menu, X, ArrowRight, LayoutDashboard, Sparkles } from 'lucide-react';
+import { Menu, X, ArrowRight, LayoutDashboard, Sparkles } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 
 interface NavbarProps {
@@ -32,29 +33,33 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenDemo }) => 
     { name: 'Home', href: '#' },
     { name: 'Features', href: '#features' },
     { name: 'How It Works', href: '#how-it-works' },
-    { name: 'Why Nirmaan', href: '#why-nirmaan' },
+    { name: 'Why BuilMate', href: '#why-builmate' },
     { name: 'FAQ', href: '#faq' },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled
           ? 'bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/80 shadow-lg shadow-black/20 py-3.5'
           : 'bg-transparent py-5'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="#" className="flex items-center space-x-3 group">
-            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 via-amber-500 to-orange-600 flex items-center justify-center text-white shadow-lg shadow-orange-500/25 group-hover:scale-105 transition-transform duration-300">
-              <HardHat className="w-5 h-5 stroke-[2.2]" />
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full border-2 border-zinc-950 animate-pulse" />
+            <div className="relative w-10 h-10 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+              <Image
+                src="/images/builmate_logo_hd.png"
+                alt="BuilMate AI Logo"
+                width={40}
+                height={40}
+                className="object-contain w-full h-full"
+              />
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-extrabold tracking-tight text-white flex items-center gap-1.5 font-sans">
-                Nirmaan <span className="text-orange-500 font-black">AI</span>
+                BuilMate <span className="text-orange-500 font-black">AI</span>
               </span>
               <span className="text-[10px] font-medium text-zinc-400 tracking-wider uppercase -mt-1">
                 Construction OS

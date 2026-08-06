@@ -29,7 +29,7 @@ export const SolutionSection: React.FC = () => {
     {
       id: 3,
       title: 'AI Processing',
-      subtitle: 'Nirmaan LLM Engine',
+      subtitle: 'BuilMate LLM Engine',
       description: 'AI extracts worker names, skill categories, working hours, sites, and applies overtime logic instantly.',
       icon: Cpu,
       color: 'from-purple-500 to-pink-500',
@@ -78,7 +78,7 @@ export const SolutionSection: React.FC = () => {
             <span>AI-Driven Workforce Pipeline</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-            Meet <span className="bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent">Nirmaan AI</span>
+            Meet <span className="bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent">BuilMate AI</span>
           </h2>
           <p className="text-base sm:text-lg text-zinc-400 leading-relaxed">
             Our specialized construction AI engine turns informal site updates into structured attendance, accurate payroll, and real-time site intelligence.

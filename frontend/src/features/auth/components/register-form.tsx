@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation';
@@ -17,7 +18,7 @@ import {
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Loader2, AlertCircle, CheckCircle2, HardHat } from 'lucide-react';
+import { Loader2, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 export const RegisterForm: React.FC = () => {
   const router = useRouter();
@@ -72,8 +73,14 @@ export const RegisterForm: React.FC = () => {
       <div className="h-1.5 w-full bg-gradient-to-r from-primary via-orange-500 to-amber-500" />
 
       <CardHeader className="space-y-1.5 items-center pb-2">
-        <div className="p-3 bg-primary/10 rounded-full border border-primary/20 mb-2">
-          <HardHat className="h-8 w-8 text-primary animate-bounce" />
+        <div className="mb-2 w-16 h-16 flex items-center justify-center">
+          <Image
+            src="/images/builmate_logo_hd.png"
+            alt="BuilMate AI Logo"
+            width={64}
+            height={64}
+            className="object-contain w-full h-full"
+          />
         </div>
         <CardTitle className="text-2xl font-extrabold tracking-tight">Create an Account</CardTitle>
         <CardDescription className="text-center text-muted-foreground text-sm">

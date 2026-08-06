@@ -4,13 +4,17 @@ import React, { useState, useEffect } from 'react';
 import { Navbar } from '@/components/landing/Navbar';
 import { Hero } from '@/components/landing/Hero';
 import { TrustSection } from '@/components/landing/TrustSection';
+import { WhoWeAre } from '@/components/landing/WhoWeAre';
+import { ServicesSection } from '@/components/landing/ServicesSection';
 import { ProblemSection } from '@/components/landing/ProblemSection';
 import { SolutionSection } from '@/components/landing/SolutionSection';
+import { WhoWeServe } from '@/components/landing/WhoWeServe';
 import { FeaturesSection } from '@/components/landing/FeaturesSection';
 import { HowItWorks } from '@/components/landing/HowItWorks';
 import { AIDemo } from '@/components/landing/AIDemo';
 import { DashboardPreview } from '@/components/landing/DashboardPreview';
 import { WhyNirmaan } from '@/components/landing/WhyNirmaan';
+import { StatsSection } from '@/components/landing/StatsSection';
 import { Testimonials } from '@/components/landing/Testimonials';
 import { FAQSection } from '@/components/landing/FAQSection';
 import { CTASection } from '@/components/landing/CTASection';
@@ -26,7 +30,7 @@ export default function Home() {
     // Set root html and body background to dark zinc while on landing page to prevent white overscroll bounce
     const originalHtmlBg = document.documentElement.style.backgroundColor;
     const originalBodyBg = document.body.style.backgroundColor;
-    
+
     document.documentElement.style.backgroundColor = '#09090b';
     document.body.style.backgroundColor = '#09090b';
 
@@ -51,16 +55,25 @@ export default function Home() {
         {/* Built For Trust Section */}
         <TrustSection />
 
-        {/* Problem Section */}
+        {/* Section 1: Who We Are */}
+        <WhoWeAre />
+
+        {/* Section 2: What We Do (Services) */}
+        <ServicesSection />
+
+        {/* Section 5: BuilMate vs Traditional Comparison */}
         <ProblemSection />
 
-        {/* Meet Nirmaan AI Solution Section */}
+        {/* Meet BuilMate AI Solution Section */}
         <SolutionSection />
 
-        {/* Features Grid */}
+        {/* Section 4: Who We Serve */}
+        <WhoWeServe />
+
+        {/* Section 8: Comprehensive Features */}
         <FeaturesSection />
 
-        {/* How It Works Timeline */}
+        {/* Section 6: How BuilMate Works (6 Steps Timeline) */}
         <HowItWorks />
 
         {/* Live Interactive AI Sandbox Demo */}
@@ -69,8 +82,11 @@ export default function Home() {
         {/* Dashboard Analytics Preview */}
         <DashboardPreview />
 
-        {/* Why Choose Nirmaan AI Benefits */}
+        {/* Section 3: Why Choose BuilMate Benefits & Guarantees */}
         <WhyNirmaan />
+
+        {/* Section 9: Statistics Counters */}
+        <StatsSection />
 
         {/* Testimonials */}
         <Testimonials />
@@ -78,8 +94,11 @@ export default function Home() {
         {/* FAQ Accordion */}
         <FAQSection />
 
-        {/* Call To Action Banner */}
-        <CTASection />
+        {/* Section 10: Call To Action Banner */}
+        <CTASection
+          onOpenContact={() => setIsContactOpen(true)}
+          onOpenDemo={() => setIsDemoOpen(true)}
+        />
       </main>
 
       {/* Footer */}

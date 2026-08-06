@@ -78,7 +78,7 @@ export const FeaturesSection: React.FC = () => {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-orange-600/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Title */}
         <div className="text-center space-y-4 max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-orange-400 bg-orange-500/10 px-3.5 py-1.5 rounded-full border border-orange-500/20">
@@ -92,7 +92,7 @@ export const FeaturesSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-base sm:text-lg text-zinc-400 leading-relaxed">
-            Designed specifically for field site execution, Nirmaan AI equips site teams and owners with powerful digital tools.
+            Designed specifically for field site execution, BuilMate AI equips site teams and owners with powerful digital tools.
           </p>
         </div>
 
