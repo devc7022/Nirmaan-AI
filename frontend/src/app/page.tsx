@@ -21,10 +21,12 @@ import { CTASection } from '@/components/landing/CTASection';
 import { Footer } from '@/components/landing/Footer';
 import { DemoModal } from '@/components/landing/DemoModal';
 import { ContactModal } from '@/components/landing/ContactModal';
+import { ContractorQueryModal } from '@/components/landing/ContractorQueryModal';
 
 export default function Home() {
   const [isDemoOpen, setIsDemoOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isContractorQueryOpen, setIsContractorQueryOpen] = useState(false);
 
   useEffect(() => {
     // Set root html and body background to dark zinc while on landing page to prevent white overscroll bounce
@@ -46,6 +48,7 @@ export default function Home() {
       <Navbar
         onOpenContact={() => setIsContactOpen(true)}
         onOpenDemo={() => setIsDemoOpen(true)}
+        onOpenContractorQuery={() => setIsContractorQueryOpen(true)}
       />
 
       <main>
@@ -107,6 +110,10 @@ export default function Home() {
       {/* Interactive Modals */}
       <DemoModal isOpen={isDemoOpen} onClose={() => setIsDemoOpen(false)} />
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
+      <ContractorQueryModal
+        isOpen={isContractorQueryOpen}
+        onClose={() => setIsContractorQueryOpen(false)}
+      />
     </div>
   );
 }

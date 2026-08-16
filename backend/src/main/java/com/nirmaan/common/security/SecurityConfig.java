@@ -49,7 +49,7 @@ public class SecurityConfig {
                 .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(a -> a
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                        .requestMatchers("/api/public/**", "/swagger-ui/**", "/v3/api-docs/**", "/actuator/health")
+                        .requestMatchers("/api/public/**", "/api/contractor-queries/**", "/swagger-ui/**", "/v3/api-docs/**", "/actuator/health")
                         .permitAll().anyRequest().authenticated())
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class).build();
     }

@@ -21,4 +21,5 @@ export const API_ENDPOINTS = {
     AI: '/api/private/attendance/ai',
   },
   DASHBOARD: '/api/private/dashboard',
+  CONTRACTOR_QUERIES: '/api/contractor-queries',
 };

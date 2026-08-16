@@ -49,14 +49,14 @@ export const CTASection: React.FC<CTASectionProps> = ({ onOpenContact, onOpenDem
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <button
-                onClick={onOpenContact}
+              <a
+                href="/contractor-query"
                 className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-base shadow-xl shadow-orange-500/30 flex items-center justify-center space-x-2 transition-all transform hover:scale-[1.02] active:scale-[0.98]"
               >
                 <Users className="w-5 h-5" />
-                <span>Hire Workers</span>
+                <span>Submit Contractor Requirement</span>
                 <ArrowRight className="w-4 h-4 stroke-[2.5]" />
-              </button>
+              </a>
 
               <button
                 onClick={onOpenDemo}

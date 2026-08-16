@@ -49,10 +49,10 @@ apiClient.interceptors.response.use(
   async (error) => {
     const originalRequest = error.config;
 
-    // Do NOT attempt token refresh or window location redirects for public auth endpoints
-    const isAuthEndpoint = originalRequest?.url?.includes('/api/public/auth');
+    // Do NOT attempt token refresh or window location redirects for public endpoints
+    const isPublicEndpoint = originalRequest?.url?.includes('/api/public/') || originalRequest?.url?.includes('/api/contractor-queries');
 
-    if (error.response?.status === 401 && !originalRequest?._retry && !isAuthEndpoint) {
+    if (error.response?.status === 401 && !originalRequest?._retry && !isPublicEndpoint) {
       if (isRefreshing) {
         return new Promise((resolve, reject) => {
           failedQueue.push({ resolve, reject });

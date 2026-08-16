@@ -85,6 +85,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
                 <a href="#demo" className="hover:text-orange-400 transition-colors">Live AI Sandbox</a>
               </li>
               <li>
+                <Link href="/contractor-query" className="text-orange-400 hover:text-orange-300 font-semibold transition-colors">
+                  Submit Contractor Requirement
+                </Link>
+              </li>
+              <li>
                 <button onClick={onOpenContact} className="hover:text-orange-400 transition-colors text-left">
                   Contact Sales & Support
                 </button>

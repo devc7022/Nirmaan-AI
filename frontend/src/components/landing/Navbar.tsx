@@ -10,9 +10,10 @@ import { useAuth } from '@/contexts/AuthContext';
 interface NavbarProps {
   onOpenContact: () => void;
   onOpenDemo: () => void;
+  onOpenContractorQuery?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenDemo }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenDemo, onOpenContractorQuery }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { isAuthenticated } = useAuth();
@@ -30,24 +31,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenDemo }) => 
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'Features', href: '#features' },
-    { name: 'How It Works', href: '#how-it-works' },
-    { name: 'Why BuilMate', href: '#why-builmate' },
-    { name: 'FAQ', href: '#faq' },
+    { name: 'Home', href: '/' },
+    { name: 'Features', href: '/#features' },
+    { name: 'How It Works', href: '/#how-it-works' },
+    { name: 'Why BuilMate', href: '/#why-builmate' },
+    { name: 'FAQ', href: '/#faq' },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        scrolled
           ? 'bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/80 shadow-lg shadow-black/20 py-3.5'
           : 'bg-transparent py-5'
-        }`}
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="#" className="flex items-center space-x-3 group">
+          <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative w-10 h-10 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
               <Image
                 src="/images/builmate_logo_hd.png"
@@ -80,6 +82,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenDemo }) => 
                 {link.name}
               </a>
             ))}
+            {onOpenContractorQuery ? (
+              <button
+                onClick={onOpenContractorQuery}
+                className="px-4 py-1.5 text-xs font-semibold text-orange-400 hover:text-orange-300 bg-orange-500/10 hover:bg-orange-500/20 border border-orange-500/30 rounded-full transition-colors flex items-center gap-1"
+              >
+                <Sparkles className="w-3 h-3 text-orange-400" />
+                <span>Submit Requirement</span>
+              </button>
+            ) : (
+              <Link
+                href="/contractor-query"
+                className="px-4 py-1.5 text-xs font-semibold text-orange-400 hover:text-orange-300 bg-orange-500/10 hover:bg-orange-500/20 border border-orange-500/30 rounded-full transition-colors flex items-center gap-1"
+              >
+                <Sparkles className="w-3 h-3 text-orange-400" />
+                <span>Submit Requirement</span>
+              </Link>
+            )}
             <button
               onClick={onOpenContact}
               className="px-4 py-1.5 text-xs font-medium text-zinc-300 hover:text-white rounded-full hover:bg-zinc-800/60 transition-colors"
@@ -152,6 +171,27 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenDemo }) => 
                   {link.name}
                 </a>
               ))}
+              {onOpenContractorQuery ? (
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenContractorQuery();
+                  }}
+                  className="text-left text-sm font-semibold text-orange-400 py-1 transition-colors flex items-center gap-1.5"
+                >
+                  <Sparkles className="w-4 h-4 text-orange-400" />
+                  Submit Contractor Requirement
+                </button>
+              ) : (
+                <Link
+                  href="/contractor-query"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-left text-sm font-semibold text-orange-400 py-1 transition-colors flex items-center gap-1.5"
+                >
+                  <Sparkles className="w-4 h-4 text-orange-400" />
+                  Submit Contractor Requirement
+                </Link>
+              )}
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
