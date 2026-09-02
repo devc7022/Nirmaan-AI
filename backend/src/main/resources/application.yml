@@ -20,7 +20,7 @@ spring:
   mail:
     host: ${SPRING_MAIL_HOST:smtp.gmail.com}
     port: ${SPRING_MAIL_PORT:587}
-    username: ${SPRING_MAIL_USERNAME:thebuilmate26@gmail.com}
+    username: ${SPRING_MAIL_USERNAME:thebumblebrick26@gmail.com}
     password: ${SPRING_MAIL_PASSWORD:oycxeovxvrlexvqf}
     properties:
       mail:
@@ -51,4 +51,4 @@ app:
     base-url: ${AI_BASE_URL:https://generativelanguage.googleapis.com/v1beta/openai}
     model: ${AI_MODEL:gemini-1.5-flash}
   contractor-query:
-    recipient-email: ${CONTRACTOR_QUERY_RECIPIENT_EMAIL:thebuilmate26@gmail.com}
+    recipient-email: ${CONTRACTOR_QUERY_RECIPIENT_EMAIL:thebumblebrick26@gmail.com}

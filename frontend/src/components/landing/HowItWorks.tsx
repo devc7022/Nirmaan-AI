@@ -53,7 +53,7 @@ export const HowItWorks: React.FC = () => {
             <span>Simple 4-Step Process</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-            How BuilMate Works in{' '}
+            How BumbleBrick Works in{' '}
             <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 bg-clip-text text-transparent">
               4 Easy Steps
             </span>

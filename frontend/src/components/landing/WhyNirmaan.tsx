@@ -44,7 +44,7 @@ export const WhyNirmaan: React.FC = () => {
   ];
 
   return (
-    <section id="why-builmate" className="py-24 bg-zinc-950 border-t border-zinc-800/80 relative overflow-hidden">
+    <section id="why-bumblebrick" className="py-24 bg-zinc-950 border-t border-zinc-800/80 relative overflow-hidden">
       {/* Glow */}
       <div className="absolute top-1/3 left-10 w-96 h-96 bg-orange-600/10 rounded-full blur-[140px] pointer-events-none" />
 
@@ -57,7 +57,7 @@ export const WhyNirmaan: React.FC = () => {
             <span>Proven Construction ROI</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-            Why Choose <span className="bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent">BuilMate AI</span>
+            Why Choose <span className="bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent">BumbleBrick AI</span>
           </h2>
           <p className="text-base sm:text-lg text-zinc-400 leading-relaxed">
             Delivering direct cost savings, operational speed, and payroll accuracy across residential, commercial, and infrastructure sites.
@@ -119,7 +119,7 @@ export const WhyNirmaan: React.FC = () => {
                 Pays for Itself in 14 Days
               </h3>
               <p className="text-xs text-orange-100 leading-relaxed">
-                By eliminating ghost workers and supervisor manual entry hours, BuilMate AI recovers its total subscription cost within your first 2 weeks.
+                By eliminating ghost workers and supervisor manual entry hours, BumbleBrick AI recovers its total subscription cost within your first 2 weeks.
               </p>
             </div>
 

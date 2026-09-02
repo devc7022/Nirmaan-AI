@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BuilMate AI - Construction Workforce & Site Management",
+  title: "BumbleBrick AI - Construction Workforce & Site Management",
   description: "AI-powered construction site management, labor tracking, daily attendance, and cost optimization.",
 };
 

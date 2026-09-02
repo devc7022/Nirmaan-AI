@@ -249,7 +249,7 @@ export const ContractorQueryForm: React.FC<ContractorQueryFormProps> = ({
           <h3 className="text-2xl font-black text-white">Requirement Submitted Successfully!</h3>
           <p className="text-sm text-zinc-400 max-w-md mx-auto">
             Your manpower requirement has been dispatched to{' '}
-            <span className="text-orange-400 font-semibold">thebuilmate26@gmail.com</span>. Our deployment coordinator will contact you shortly.
+            <span className="text-orange-400 font-semibold">thebumblebrick26@gmail.com</span>. Our deployment coordinator will contact you shortly.
           </p>
         </div>
 
@@ -717,7 +717,7 @@ export const ContractorQueryForm: React.FC<ContractorQueryFormProps> = ({
           )}
         </button>
         <p className="text-[11px] text-zinc-500 text-center mt-2 flex items-center justify-center gap-1">
-          <HelpCircle className="w-3.5 h-3.5 text-zinc-400" /> Direct dispatch to BuildMate Support (thebuilmate26@gmail.com)
+          <HelpCircle className="w-3.5 h-3.5 text-zinc-400" /> Direct dispatch to BumbleBrick Support (thebumblebrick26@gmail.com)
         </p>
       </div>
     </form>

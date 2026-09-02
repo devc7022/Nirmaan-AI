@@ -36,7 +36,7 @@ export const AIChat: React.FC<AIChatProps> = ({ onShowToast }) => {
       id: 'welcome-msg',
       sender: 'ai',
       content:
-        'Hello! I am your **BuilMate AI Workforce Assistant**. How can I help you manage your construction sites and workers today?',
+        'Hello! I am your **BumbleBrick AI Workforce Assistant**. How can I help you manage your construction sites and workers today?',
       timestamp: '09:00 AM',
     },
   ]);

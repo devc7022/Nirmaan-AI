@@ -20,7 +20,7 @@ public class EmailServiceImpl implements EmailService {
 
     private final JavaMailSender mailSender;
 
-    @Value("${app.contractor-query.recipient-email:thebuilmate26@gmail.com}")
+    @Value("${app.contractor-query.recipient-email:thebumblebrick26@gmail.com}")
     private String recipientEmail;
 
     @Value("${spring.mail.username:}")
@@ -41,9 +41,9 @@ public class EmailServiceImpl implements EmailService {
             MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true, "UTF-8");
 
             helper.setFrom(fromEmail);
-            // Always set recipient to the required email: thebuilmate26@gmail.com
+            // Always set recipient to the required email: thebumblebrick26@gmail.com
             helper.setTo(recipientEmail);
-            helper.setSubject("New Contractor Requirement — BuildMate AI (" + query.getCompanyName() + ")");
+            helper.setSubject("New Contractor Requirement — BumbleBrick AI (" + query.getCompanyName() + ")");
 
             String htmlBody = buildHtmlEmailContent(query);
             helper.setText(htmlBody, true);
@@ -88,7 +88,7 @@ public class EmailServiceImpl implements EmailService {
                 
                 // Header Banner
                 + "    <div style='background: linear-gradient(135deg, #f97316 0%, #d97706 100%); padding:24px; text-align:center; color:#ffffff;'>"
-                + "      <h1 style='margin:0; font-size:22px; font-weight:800; letter-spacing:-0.5px;'>BuildMate AI</h1>"
+                + "      <h1 style='margin:0; font-size:22px; font-weight:800; letter-spacing:-0.5px;'>BumbleBrick AI</h1>"
                 + "      <p style='margin:4px 0 0 0; font-size:14px; font-weight:500; opacity:0.9;'>New Contractor Requirement Submission</p>"
                 + "    </div>"
 
@@ -130,7 +130,7 @@ public class EmailServiceImpl implements EmailService {
                 // Footer Timestamp
                 + "      <div style='margin-top:30px; padding-top:16px; border-top:1px solid #27272a; font-size:12px; color:#a1a1aa; text-align:center;'>"
                 + "        <p style='margin:4px 0;'><strong>Submitted At:</strong> " + submissionTime + "</p>"
-                + "        <p style='margin:4px 0;'>BuildMate AI — Intelligent Construction Management Platform</p>"
+                + "        <p style='margin:4px 0;'>BumbleBrick AI — Intelligent Construction Management Platform</p>"
                 + "      </div>"
 
                 + "    </div>"

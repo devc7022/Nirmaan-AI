@@ -12,7 +12,7 @@ export const Testimonials: React.FC = () => {
       company: 'Apex Infrastructure Ltd.',
       site: 'Metro Line 3 Corridor Project',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150',
-      content: 'BuilMate AI completely transformed our site attendance logging. Our supervisors speak updates in Hindi, and wages get calculated with zero disputes. We saved ₹4.2 Lakhs in payroll leakages within 2 months.',
+      content: 'BumbleBrick AI completely transformed our site attendance logging. Our supervisors speak updates in Hindi, and wages get calculated with zero disputes. We saved ₹4.2 Lakhs in payroll leakages within 2 months.',
       stars: 5,
     },
     {
@@ -21,7 +21,7 @@ export const Testimonials: React.FC = () => {
       company: 'Vanguard Builders & Developers',
       site: 'High-Rise Commercial Tower B',
       image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150',
-      content: 'Managing 300+ masons across 4 sites used to be a daily headache. BuilMate AI gives me real-time headcounts at 9 AM directly on my mobile screen. Essential tool for every Indian contractor.',
+      content: 'Managing 300+ masons across 4 sites used to be a daily headache. BumbleBrick AI gives me real-time headcounts at 9 AM directly on my mobile screen. Essential tool for every Indian contractor.',
       stars: 5,
     },
     {
@@ -51,7 +51,7 @@ export const Testimonials: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
             What Site Leaders Say About{' '}
             <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 bg-clip-text text-transparent">
-              BuilMate AI
+              BumbleBrick AI
             </span>
           </h2>
           <p className="text-base sm:text-lg text-zinc-400 leading-relaxed">

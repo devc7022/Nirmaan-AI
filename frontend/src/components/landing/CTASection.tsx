@@ -44,7 +44,7 @@ export const CTASection: React.FC<CTASectionProps> = ({ onOpenContact, onOpenDem
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-zinc-300 max-w-2xl mx-auto leading-relaxed">
-              Hire verified construction workers or modernize your workforce management with BuilMate AI.
+              Hire verified construction workers or modernize your workforce management with BumbleBrick AI.
             </p>
 
             {/* Buttons */}

@@ -59,11 +59,11 @@ export const WhoWeAre: React.FC = () => {
             </h2>
 
             <p className="text-base sm:text-lg text-zinc-300 leading-relaxed font-normal">
-              BuilMate connects contractors, builders, architects, site supervisors, and skilled labour through one intelligent workforce platform.
+              BumbleBrick connects contractors, builders, architects, site supervisors, and skilled labour through one intelligent workforce platform.
             </p>
 
             <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
-              Whether it&apos;s hiring civil labour, painters, tile masons, POP experts, or managing site attendance with AI, BuilMate simplifies construction workforce management from hiring to reporting.
+              Whether it&apos;s hiring civil labour, painters, tile masons, POP experts, or managing site attendance with AI, BumbleBrick simplifies construction workforce management from hiring to reporting.
             </p>
 
             {/* 3 Feature Cards */}
@@ -115,8 +115,8 @@ export const WhoWeAre: React.FC = () => {
             <div className="relative rounded-3xl bg-zinc-900 border border-zinc-800 p-8 shadow-2xl space-y-6 text-center overflow-hidden">
               <div className="w-32 h-32 mx-auto relative flex items-center justify-center">
                 <Image
-                  src="/images/builmate_logo_hd.png"
-                  alt="BuilMate AI Logo"
+                  src="/images/bumble_brick_building_only_logo.png"
+                  alt="BumbleBrick AI Logo"
                   width={120}
                   height={120}
                   className="object-contain drop-shadow-[0_10px_20px_rgba(249,115,22,0.3)]"
@@ -125,7 +125,7 @@ export const WhoWeAre: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <h3 className="text-xl font-bold text-white">BuilMate Operating System</h3>
+                <h3 className="text-xl font-bold text-white">BumbleBrick Operating System</h3>
                 <p className="text-xs text-zinc-400 leading-relaxed max-w-xs mx-auto">
                   Unifying field operations, multi-site deployments, and skilled trade allocation into a single digital platform.
                 </p>

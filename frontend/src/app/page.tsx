@@ -64,10 +64,10 @@ export default function Home() {
         {/* Section 2: What We Do (Services) */}
         <ServicesSection />
 
-        {/* Section 5: BuilMate vs Traditional Comparison */}
+        {/* Section 5: BumbleBrick vs Traditional Comparison */}
         <ProblemSection />
 
-        {/* Meet BuilMate AI Solution Section */}
+        {/* Meet BumbleBrick AI Solution Section */}
         <SolutionSection />
 
         {/* Section 4: Who We Serve */}
@@ -76,7 +76,7 @@ export default function Home() {
         {/* Section 8: Comprehensive Features */}
         <FeaturesSection />
 
-        {/* Section 6: How BuilMate Works (6 Steps Timeline) */}
+        {/* Section 6: How BumbleBrick Works (6 Steps Timeline) */}
         <HowItWorks />
 
         {/* Live Interactive AI Sandbox Demo */}
@@ -85,7 +85,7 @@ export default function Home() {
         {/* Dashboard Analytics Preview */}
         <DashboardPreview />
 
-        {/* Section 3: Why Choose BuilMate Benefits & Guarantees */}
+        {/* Section 3: Why Choose BumbleBrick Benefits & Guarantees */}
         <WhyNirmaan />
 
         {/* Section 9: Statistics Counters */}

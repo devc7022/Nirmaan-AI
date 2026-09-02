@@ -49,8 +49,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onToggle }) => 
             <div className="flex items-center gap-3 overflow-hidden">
               <div className="relative w-9 h-9 flex items-center justify-center shrink-0">
                 <Image
-                  src="/images/builmate_logo_hd.png"
-                  alt="BuilMate AI Logo"
+                  src="/images/bumble_brick_building_only_logo.png"
+                  alt="BumbleBrick AI Logo"
                   width={36}
                   height={36}
                   className="object-contain w-full h-full"
@@ -59,7 +59,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onToggle }) => 
                 />
               </div>
               <span className="font-extrabold text-xl tracking-tight bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent truncate">
-                BuilMate AI
+                BumbleBrick AI
               </span>
             </div>
 

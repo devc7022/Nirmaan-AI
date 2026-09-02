@@ -92,7 +92,7 @@ export const FeaturesSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-base sm:text-lg text-zinc-400 leading-relaxed">
-            Designed specifically for field site execution, BuilMate AI equips site teams and owners with powerful digital tools.
+            Designed specifically for field site execution, BumbleBrick AI equips site teams and owners with powerful digital tools.
           </p>
         </div>
 

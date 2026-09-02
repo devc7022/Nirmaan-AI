@@ -77,10 +77,10 @@ export const AIDemo: React.FC = () => {
             <span>Interactive Live AI Sandbox</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-            Try the Live <span className="bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent">BuilMate AI Assistant</span>
+            Try the Live <span className="bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent">BumbleBrick AI Assistant</span>
           </h2>
           <p className="text-base sm:text-lg text-zinc-400 leading-relaxed">
-            Type any natural language site update in Hindi or English, or click sample prompts to watch BuilMate AI extract structured attendance data in real time.
+            Type any natural language site update in Hindi or English, or click sample prompts to watch BumbleBrick AI extract structured attendance data in real time.
           </p>
         </div>
 
@@ -95,7 +95,7 @@ export const AIDemo: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-base font-bold text-white flex items-center gap-2">
-                  BuilMate AI Natural Language Parser
+                  BumbleBrick AI Natural Language Parser
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                 </h3>
                 <p className="text-xs text-zinc-400">Zero manual form entry required</p>
@@ -171,7 +171,7 @@ export const AIDemo: React.FC = () => {
                   className="p-8 rounded-2xl bg-zinc-950 border border-zinc-800 flex flex-col items-center justify-center space-y-3"
                 >
                   <RefreshCw className="w-8 h-8 text-orange-400 animate-spin" />
-                  <p className="text-xs text-zinc-400 font-mono">BuilMate LLM extracting worker profiles, hours, and site allocation...</p>
+                  <p className="text-xs text-zinc-400 font-mono">BumbleBrick LLM extracting worker profiles, hours, and site allocation...</p>
                 </motion.div>
               ) : (
                 <motion.div

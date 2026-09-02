@@ -75,7 +75,7 @@ export default function ContractorQueryPage() {
             </div>
             <div>
               <h4 className="text-xs font-bold text-white">Guaranteed Payout Log</h4>
-              <p className="text-[11px] text-zinc-400 mt-0.5">Tracked directly via BuildMate AI Attendance OS.</p>
+              <p className="text-[11px] text-zinc-400 mt-0.5">Tracked directly via BumbleBrick AI Attendance OS.</p>
             </div>
           </div>
         </div>

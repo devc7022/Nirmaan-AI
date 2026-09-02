@@ -37,7 +37,7 @@ export const ContractorQueryModal: React.FC<ContractorQueryModalProps> = ({
                   Contractor Support & Requirement Form
                 </h3>
                 <p className="text-xs text-zinc-400">
-                  Request skilled manpower, materials, or equipment support from BuildMate AI
+                  Request skilled manpower, materials, or equipment support from BumbleBrick AI
                 </p>
               </div>
             </div>

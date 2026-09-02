@@ -34,7 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenDemo, onOpe
     { name: 'Home', href: '/' },
     { name: 'Features', href: '/#features' },
     { name: 'How It Works', href: '/#how-it-works' },
-    { name: 'Why BuilMate', href: '/#why-builmate' },
+    { name: 'Why BumbleBrick', href: '/#why-bumblebrick' },
     { name: 'FAQ', href: '/#faq' },
   ];
 
@@ -52,8 +52,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenDemo, onOpe
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative w-10 h-10 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
               <Image
-                src="/images/builmate_logo_hd.png"
-                alt="BuilMate AI Logo"
+                src="/images/bumble_brick_building_only_logo.png"
+                alt="BumbleBrick AI Logo"
                 width={40}
                 height={40}
                 className="object-contain w-full h-full"
@@ -63,7 +63,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onOpenDemo, onOpe
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-extrabold tracking-tight text-white flex items-center gap-1.5 font-sans">
-                BuilMate <span className="text-orange-500 font-black">AI</span>
+                BumbleBrick <span className="text-orange-500 font-black">AI</span>
               </span>
               <span className="text-[10px] font-medium text-zinc-400 tracking-wider uppercase -mt-1">
                 Construction OS
