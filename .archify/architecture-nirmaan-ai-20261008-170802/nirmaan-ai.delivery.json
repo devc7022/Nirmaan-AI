@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "033dfbd7-7ae2-46de-88ed-050c6c84f23f",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "C:\\Users\\Dev Chauhan\\Desktop\\Nirmaan-AI\\.archify\\architecture-nirmaan-ai-20261008-170802\\candidate.json",
+  "output": "C:\\Users\\Dev Chauhan\\Desktop\\Nirmaan-AI\\.archify\\architecture-nirmaan-ai-20261008-170802\\nirmaan-ai.html",
+  "specification": {
+    "sha256": "534fe641d64829c756bc8bd4ad34b8ec9e8d264ae762993aa455992b0608a183",
+    "bytes": 6274
+  },
+  "artifact": {
+    "sha256": "def4a348d5952a2613277412bc501f48f01a7fcc72b927fb9d94ec0110bc8958",
+    "bytes": 768772
+  }
+}
