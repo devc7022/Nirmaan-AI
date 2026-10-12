@@ -31,7 +31,7 @@ export const getApiBaseUrl = (): string => {
   }
 
   // Production URL (e.g., deployed backend)
-  return 'https://nirmaan-api.onrender.com';
+  return 'https://nirmaan-api-tz0q.onrender.com';
 };
 
 export const API_BASE_URL = getApiBaseUrl();
